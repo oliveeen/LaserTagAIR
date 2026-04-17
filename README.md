@@ -4,22 +4,23 @@ This project is an Arduino-based laser tag system designed for customizable, low
 ____________________________________________________________________
 
  COMPONENTS (for 1 rifle + helmet set)
-Arduino Uno R3 / R4 or compatible clone with solderable headers (it's mandatory to have solderable headers if you don't want to use breadboards or solderable pcbs)
-KY-005 IR emitter LED (5 mm)
-KY-022 IR receiver module
-Collimating lens (Ø 30 mm, focal length 50 mm)
-LCD 1602 display
-Battery pack (4x AA batteries)
-On/off switch
-Potentiometer
-5.5 mm barrel jack adapter (to power the Arduino from the battery pack)
-One or more standard LEDs (can be placed in parallel)
-3 push buttons
-Resistors (various values, ~220Ω to 10kΩ)
-Jumper wires (a Dupont crimping kit is highly recommended)
-Soldering equipment (tin, iron, etc.)
-3D Printed Parts
-You can get the helmet printing anyone and installing IR receiver and LED
+-Arduino Uno R3 / R4 or compatible clone with solderable headers (it's mandatory to have solderable headers if you don't want to use breadboards or solderable pcbs)
+-KY-005 IR emitter LED (5 mm)
+-KY-022 IR receiver module
+-Collimating lens (Ø 30 mm, focal length 50 mm)
+-LCD 1602 display
+-Battery pack (4x AA batteries)
+-On/off switch
+-Potentiometer
+-5.5 mm barrel jack adapter (to power the Arduino from the battery pack)
+-One or more standard LEDs (can be placed in parallel)
+-3 push buttons
+-Resistors (various values, ~220Ω to 10kΩ)
+-Jumper wires (a Dupont crimping kit is highly recommended)
+-Soldering equipment (tin, iron, etc.)
+-3D Printed Parts
+-Any kind of glue
+-You can get the helmet printing anyone and installing IR receiver and LED
 
 The repository includes STL files for:
 Rifle body
@@ -61,6 +62,9 @@ GND = GND
 VCC = 5v
 
 -Buttons 
+Below you can see the "Fire" button Wiring. You have other two buttons with the same wiring but different pinout:
+"Next" button at pin_8
+"Select" button at pin_9
 <img width="1204" height="1600" alt="buttonsWiring" src="https://github.com/user-attachments/assets/58c7b64a-f5d4-4668-96fd-a899b8fbe531" />
 <img width="1536" height="2040" alt="FireButtonPosition" src="https://github.com/user-attachments/assets/455daa69-cc3e-48ad-9d4f-6644197a7199" />
 
