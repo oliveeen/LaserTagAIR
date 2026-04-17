@@ -61,7 +61,9 @@ GND = GND
 VCC = 5v
 
 -Buttons 
-![Prototype](Process_Images.buttonsWiring.jpeg)
+<img width="1204" height="1600" alt="buttonsWiring" src="https://github.com/user-attachments/assets/58c7b64a-f5d4-4668-96fd-a899b8fbe531" />
+<img width="1536" height="2040" alt="FireButtonPosition" src="https://github.com/user-attachments/assets/455daa69-cc3e-48ad-9d4f-6644197a7199" />
+
 
 ____________________________________________________________________
 
@@ -70,13 +72,20 @@ ASSEMBLY
 Once all parts are printed:
 
 Assemble the rifle and helmet wiring (and soldering) as shown
-[IMMAGINE]
+<img width="1204" height="1600" alt="assembly2" src="https://github.com/user-attachments/assets/5732682b-21c3-44c0-893c-928f7e189814" />
+<img width="1204" height="1600" alt="assembly2" src="https://github.com/user-attachments/assets/8a3bd42b-6f74-4d6f-b285-b53699f6bb59" />
+<img width="1204" height="1600" alt="assembly1" src="https://github.com/user-attachments/assets/0fd5dd1e-7248-452d-921a-0476c5874516" />
+
 Mount all electronic components inside the printed structures.
 Wire everything according to the circuit design.
 Solder connections where needed for stability.
- Software
-[ALLEGATO]
-Upload the provided code to the Arduino using the Arduino IDE.
+
+____________________________________________________________________
+
+TRIGGER MECHANISM
+
+<img width="1536" height="2040" alt="triggerMechanism" src="https://github.com/user-attachments/assets/509867ee-269d-4d4b-8309-a6e14f789e6a" />
+
 
 
 
