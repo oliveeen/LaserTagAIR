@@ -22,10 +22,18 @@ ____________________________________________________________________
 -Any kind of glue
 -You can get the helmet printing anyone and installing IR receiver and LED
 
-The repository includes STL files for:
+Soon in my makerworld page STL files will be available:
 Rifle body
 Trigger mechanism
 Battery pack housing (you can easily purchase it on aliexpress if you prefer)
+
+<img width="820" height="657" alt="image" src="https://github.com/user-attachments/assets/fdf21a03-ced0-430c-8ac0-c158e6361779" />
+<img width="470" height="409" alt="image" src="https://github.com/user-attachments/assets/5b6a1baa-c219-4b4d-8ec8-ef8b8a82e3da" />
+<img width="321" height="324" alt="image" src="https://github.com/user-attachments/assets/b456e1b2-4560-4e1e-8402-ac6949dd23b7" />
+<img width="231" height="295" alt="image" src="https://github.com/user-attachments/assets/711d88a5-ad41-4feb-8cdf-c4013748060c" />
+
+
+
 
 Print everything and prepare the parts before assembly.
 
@@ -86,7 +94,7 @@ Solder connections where needed for stability.
 
 ____________________________________________________________________
 
-TRIGGER MECHANISM
+TRIGGER MECHANISM ASSEMBLY
 
 <img width="1536" height="2040" alt="triggerMechanism" src="https://github.com/user-attachments/assets/509867ee-269d-4d4b-8309-a6e14f789e6a" />
 
