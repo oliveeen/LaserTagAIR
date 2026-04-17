@@ -61,7 +61,7 @@ GND = GND
 VCC = 5v
 
 -Buttons 
-
+![Prototype](Process_Images.buttonsWiring.jpeg)
 
 ____________________________________________________________________
 
