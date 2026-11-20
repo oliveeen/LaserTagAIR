@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" width="1100" height="720" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title>LaserTagAIR wiring diagram</title>
+
+  <!-- background (white so it stays readable in GitHub dark mode) -->
+  <rect x="0" y="0" width="1100" height="720" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+
+  <text x="40" y="48" font-size="22" font-weight="700" fill="#1f2328">LaserTagAIR — wiring diagram</text>
+  <text x="40" y="72" font-size="13" fill="#57606a">1 rifle + helmet set · Arduino Uno · pin numbers from laserGameV2.ino</text>
+
+  <!-- ===================== ARDUINO ===================== -->
+  <rect x="440" y="110" width="220" height="440" rx="10" fill="#00878f" stroke="#005c63" stroke-width="2"/>
+  <text x="550" y="142" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">ARDUINO</text>
+  <text x="550" y="163" font-size="14" fill="#ffffff" text-anchor="middle">UNO</text>
+
+  <g stroke="#1f2328" stroke-width="2">
+    <!-- left pins (LCD) -->
+    <line x1="420" y1="200" x2="440" y2="200"/>
+    <line x1="420" y1="240" x2="440" y2="240"/>
+    <line x1="420" y1="280" x2="440" y2="280"/>
+    <line x1="420" y1="320" x2="440" y2="320"/>
+    <line x1="420" y1="360" x2="440" y2="360"/>
+    <line x1="420" y1="400" x2="440" y2="400"/>
+    <!-- right pins -->
+    <line x1="660" y1="200" x2="680" y2="200"/>
+    <line x1="660" y1="260" x2="680" y2="260"/>
+    <line x1="660" y1="320" x2="680" y2="320"/>
+    <line x1="660" y1="380" x2="680" y2="380"/>
+    <line x1="660" y1="440" x2="680" y2="440"/>
+    <line x1="660" y1="500" x2="680" y2="500"/>
+    <!-- bottom pins -->
+    <line x1="480" y1="550" x2="480" y2="575"/>
+    <line x1="540" y1="550" x2="540" y2="575"/>
+    <line x1="590" y1="550" x2="590" y2="575"/>
+    <line x1="640" y1="550" x2="640" y2="575"/>
+  </g>
+
+  <g font-size="14" font-weight="600" fill="#ffffff">
+    <text x="452" y="205">D12</text>
+    <text x="452" y="245">D2</text>
+    <text x="452" y="285">D5</text>
+    <text x="452" y="325">D4</text>
+    <text x="452" y="365">D13</text>
+    <text x="452" y="405">D7</text>
+    <text x="648" y="205" text-anchor="end">D3</text>
+    <text x="648" y="265" text-anchor="end">D6</text>
+    <text x="648" y="325" text-anchor="end">D8</text>
+    <text x="648" y="385" text-anchor="end">D9</text>
+    <text x="648" y="445" text-anchor="end">D10</text>
+    <text x="648" y="505" text-anchor="end">D11</text>
+  </g>
+  <g font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle">
+    <text x="480" y="540">DC IN</text>
+    <text x="540" y="540">5V</text>
+    <text x="590" y="540">3.3V</text>
+    <text x="640" y="540">GND</text>
+  </g>
+
+  <!-- power pin net labels -->
+  <text x="540" y="592" font-size="12" font-weight="700" fill="#cf222e" text-anchor="middle">5V</text>
+  <text x="590" y="592" font-size="12" font-weight="700" fill="#cf222e" text-anchor="middle">3.3V</text>
+  <g stroke="#1f2328" stroke-width="2">
+    <line x1="628" y1="575" x2="652" y2="575"/>
+    <line x1="633" y1="580" x2="647" y2="580"/>
+    <line x1="637" y1="585" x2="643" y2="585"/>
+  </g>
+
+  <!-- ===================== LCD ===================== -->
+  <rect x="150" y="140" width="170" height="290" rx="6" fill="#eef6f6" stroke="#2b6b6f" stroke-width="2"/>
+  <text x="235" y="164" font-size="15" font-weight="700" fill="#1f2328" text-anchor="middle">LCD 1602</text>
+  <text x="235" y="182" font-size="12" fill="#57606a" text-anchor="middle">(4-bit mode)</text>
+  <g font-size="13" font-weight="600" fill="#1f2328" text-anchor="end">
+    <text x="308" y="205">RS</text>
+    <text x="308" y="245">E</text>
+    <text x="308" y="285">D4</text>
+    <text x="308" y="325">D5</text>
+    <text x="308" y="365">D6</text>
+    <text x="308" y="405">D7</text>
+  </g>
+  <g stroke="#1f2328" stroke-width="2">
+    <line x1="320" y1="200" x2="420" y2="200"/>
+    <line x1="320" y1="240" x2="420" y2="240"/>
+    <line x1="320" y1="280" x2="420" y2="280"/>
+    <line x1="320" y1="320" x2="420" y2="320"/>
+    <line x1="320" y1="360" x2="420" y2="360"/>
+    <line x1="320" y1="400" x2="420" y2="400"/>
+  </g>
+  <rect x="130" y="448" width="210" height="64" rx="6" fill="none" stroke="#8c959f" stroke-dasharray="6 4"/>
+  <g font-size="12" fill="#57606a" text-anchor="middle">
+    <text x="235" y="469">VSS · VDD · V0 (contrast pot)</text>
+    <text x="235" y="486">RW · A · K (backlight)</text>
+    <text x="235" y="503" font-style="italic">wiring coming soon</text>
+  </g>
+
+  <!-- ===================== IR LED (D3) ===================== -->
+  <line x1="680" y1="200" x2="790" y2="200" stroke="#1f2328" stroke-width="2"/>
+  <text x="784" y="193" font-size="11" fill="#57606a" text-anchor="end">S</text>
+  <rect x="790" y="172" width="200" height="56" rx="6" fill="#fff4e5" stroke="#bc6c00" stroke-width="2"/>
+  <text x="890" y="196" font-size="14" font-weight="700" fill="#1f2328" text-anchor="middle">KY-005 IR LED</text>
+  <text x="890" y="215" font-size="11" fill="#57606a" text-anchor="middle">+ Ø30 mm collimating lens</text>
+  <text x="996" y="193" font-size="11" fill="#57606a">−</text>
+  <g stroke="#1f2328" stroke-width="2">
+    <line x1="990" y1="200" x2="1012" y2="200"/>
+    <line x1="1012" y1="200" x2="1012" y2="212"/>
+    <line x1="1000" y1="212" x2="1024" y2="212"/>
+    <line x1="1005" y1="217" x2="1019" y2="217"/>
+    <line x1="1009" y1="222" x2="1015" y2="222"/>
+  </g>
+
+  <!-- ===================== BUTTONS (D6, D8, D9) ===================== -->
+  <!-- template: node at x=720, pushbutton 760-840 to 3.3V, 220 ohm pull-down to GND -->
+  <g id="btn-fire">
+    <g stroke="#1f2328" stroke-width="2" fill="none">
+      <line x1="680" y1="260" x2="767" y2="260"/>
+      <circle cx="770" cy="260" r="3"/>
+      <circle cx="810" cy="260" r="3"/>
+      <line x1="813" y1="260" x2="840" y2="260"/>
+      <line x1="766" y1="250" x2="814" y2="250"/>
+      <line x1="790" y1="250" x2="790" y2="242"/>
+      <line x1="782" y1="242" x2="798" y2="242"/>
+      <line x1="720" y1="260" x2="720" y2="266"/>
+      <rect x="714" y="266" width="12" height="24" fill="#ffffff"/>
+      <line x1="720" y1="290" x2="720" y2="296"/>
+      <line x1="709" y1="296" x2="731" y2="296"/>
+      <line x1="713" y1="301" x2="727" y2="301"/>
+      <line x1="717" y1="306" x2="723" y2="306"/>
+    </g>
+    <circle cx="720" cy="260" r="4" fill="#1f2328"/>
+    <text x="732" y="284" font-size="11" fill="#57606a">220 Ω</text>
+    <text x="846" y="264" font-size="12" font-weight="700" fill="#cf222e">3.3V</text>
+    <text x="900" y="264" font-size="13" font-weight="700" fill="#1f2328">FIRE (trigger)</text>
+  </g>
+
+  <g id="btn-next">
+    <g stroke="#1f2328" stroke-width="2" fill="none">
+      <line x1="680" y1="320" x2="767" y2="320"/>
+      <circle cx="770" cy="320" r="3"/>
+      <circle cx="810" cy="320" r="3"/>
+      <line x1="813" y1="320" x2="840" y2="320"/>
+      <line x1="766" y1="310" x2="814" y2="310"/>
+      <line x1="790" y1="310" x2="790" y2="302"/>
+      <line x1="782" y1="302" x2="798" y2="302"/>
+      <line x1="720" y1="320" x2="720" y2="326"/>
+      <rect x="714" y="326" width="12" height="24" fill="#ffffff"/>
+      <line x1="720" y1="350" x2="720" y2="356"/>
+      <line x1="709" y1="356" x2="731" y2="356"/>
+      <line x1="713" y1="361" x2="727" y2="361"/>
+      <line x1="717" y1="366" x2="723" y2="366"/>
+    </g>
+    <circle cx="720" cy="320" r="4" fill="#1f2328"/>
+    <text x="732" y="344" font-size="11" fill="#57606a">220 Ω</text>
+    <text x="846" y="324" font-size="12" font-weight="700" fill="#cf222e">3.3V</text>
+    <text x="900" y="324" font-size="13" font-weight="700" fill="#1f2328">NEXT</text>
+  </g>
+
+  <g id="btn-select">
+    <g stroke="#1f2328" stroke-width="2" fill="none">
+      <line x1="680" y1="380" x2="767" y2="380"/>
+      <circle cx="770" cy="380" r="3"/>
+      <circle cx="810" cy="380" r="3"/>
+      <line x1="813" y1="380" x2="840" y2="380"/>
+      <line x1="766" y1="370" x2="814" y2="370"/>
+      <line x1="790" y1="370" x2="790" y2="362"/>
+      <line x1="782" y1="362" x2="798" y2="362"/>
+      <line x1="720" y1="380" x2="720" y2="386"/>
+      <rect x="714" y="386" width="12" height="24" fill="#ffffff"/>
+      <line x1="720" y1="410" x2="720" y2="416"/>
+      <line x1="709" y1="416" x2="731" y2="416"/>
+      <line x1="713" y1="421" x2="727" y2="421"/>
+      <line x1="717" y1="426" x2="723" y2="426"/>
+    </g>
+    <circle cx="720" cy="380" r="4" fill="#1f2328"/>
+    <text x="732" y="404" font-size="11" fill="#57606a">220 Ω</text>
+    <text x="846" y="384" font-size="12" font-weight="700" fill="#cf222e">3.3V</text>
+    <text x="900" y="384" font-size="13" font-weight="700" fill="#1f2328">SELECT</text>
+  </g>
+
+  <!-- ===================== STATUS LED (D10) ===================== -->
+  <g stroke="#1f2328" stroke-width="2" fill="none">
+    <line x1="680" y1="440" x2="760" y2="440"/>
+    <rect x="760" y="434" width="36" height="12" fill="#ffffff"/>
+    <line x1="796" y1="440" x2="820" y2="440"/>
+    <polygon points="820,430 820,450 838,440" fill="#ffd33d"/>
+    <line x1="838" y1="430" x2="838" y2="450"/>
+    <line x1="838" y1="440" x2="860" y2="440"/>
+    <line x1="826" y1="427" x2="833" y2="419"/>
+    <line x1="833" y1="430" x2="840" y2="422"/>
+    <line x1="860" y1="440" x2="860" y2="452"/>
+    <line x1="848" y1="452" x2="872" y2="452"/>
+    <line x1="853" y1="457" x2="867" y2="457"/>
+    <line x1="857" y1="462" x2="863" y2="462"/>
+  </g>
+  <polygon points="833,419 828,420 832,424" fill="#1f2328"/>
+  <polygon points="840,422 835,423 839,427" fill="#1f2328"/>
+  <text x="778" y="428" font-size="11" fill="#57606a" text-anchor="middle">R</text>
+  <text x="900" y="444" font-size="13" font-weight="700" fill="#1f2328">STATUS LED(s)</text>
+
+  <!-- ===================== IR RECEIVER (D11) - HELMET ===================== -->
+  <rect x="772" y="466" width="300" height="76" rx="8" fill="none" stroke="#8c959f" stroke-dasharray="6 4"/>
+  <text x="1064" y="482" font-size="10" font-weight="700" fill="#57606a" text-anchor="end" letter-spacing="1">HELMET</text>
+  <line x1="680" y1="500" x2="790" y2="500" stroke="#1f2328" stroke-width="2"/>
+  <text x="784" y="493" font-size="11" fill="#57606a" text-anchor="end">S</text>
+  <rect x="790" y="476" width="200" height="56" rx="6" fill="#e8f1ff" stroke="#0b5cad" stroke-width="2"/>
+  <text x="882" y="500" font-size="14" font-weight="700" fill="#1f2328" text-anchor="middle">KY-022 IR receiver</text>
+  <text x="882" y="519" font-size="11" fill="#57606a" text-anchor="middle">38 kHz</text>
+  <text x="984" y="496" font-size="11" fill="#57606a" text-anchor="end">+</text>
+  <text x="984" y="521" font-size="11" fill="#57606a" text-anchor="end">−</text>
+  <g stroke="#1f2328" stroke-width="2">
+    <line x1="990" y1="492" x2="1010" y2="492"/>
+    <line x1="990" y1="516" x2="1030" y2="516"/>
+    <line x1="1030" y1="516" x2="1030" y2="522"/>
+    <line x1="1018" y1="522" x2="1042" y2="522"/>
+    <line x1="1023" y1="527" x2="1037" y2="527"/>
+    <line x1="1027" y1="532" x2="1033" y2="532"/>
+  </g>
+  <text x="1014" y="496" font-size="12" font-weight="700" fill="#cf222e">5V</text>
+
+  <!-- ===================== POWER ===================== -->
+  <g font-size="12" font-weight="700" fill="#1f2328" text-anchor="middle">
+    <text x="216" y="612">4×AA battery pack</text>
+    <text x="330" y="612">ON/OFF switch</text>
+    <text x="430" y="612">5.5 mm jack</text>
+  </g>
+  <g stroke="#1f2328" stroke-width="2" fill="none">
+    <!-- GND symbol on battery negative -->
+    <line x1="170" y1="640" x2="200" y2="640"/>
+    <line x1="170" y1="640" x2="170" y2="652"/>
+    <line x1="158" y1="652" x2="182" y2="652"/>
+    <line x1="163" y1="657" x2="177" y2="657"/>
+    <line x1="167" y1="662" x2="173" y2="662"/>
+    <!-- cells: short = negative, long = positive -->
+    <line x1="200" y1="632" x2="200" y2="648"/>
+    <line x1="210" y1="624" x2="210" y2="656"/>
+    <line x1="222" y1="632" x2="222" y2="648"/>
+    <line x1="232" y1="624" x2="232" y2="656"/>
+    <!-- to switch -->
+    <line x1="232" y1="640" x2="307" y2="640"/>
+    <circle cx="310" cy="640" r="3"/>
+    <circle cx="350" cy="640" r="3"/>
+    <line x1="312" y1="638" x2="348" y2="624"/>
+    <line x1="353" y1="640" x2="400" y2="640"/>
+    <!-- barrel jack -->
+    <rect x="400" y="627" width="60" height="26" rx="4" fill="#f3f3f3"/>
+    <line x1="460" y1="640" x2="480" y2="640"/>
+    <line x1="480" y1="640" x2="480" y2="575"/>
+  </g>
+  <text x="196" y="628" font-size="11" fill="#57606a" text-anchor="end">−</text>
+  <text x="240" y="628" font-size="11" fill="#57606a">+</text>
+
+  <!-- ===================== LEGEND ===================== -->
+  <g font-size="12" fill="#57606a">
+    <text x="600" y="640">• Labels with the same name (5V, 3.3V, GND) are the same net.</text>
+    <text x="600" y="660">• Buttons: pin connected to 3.3V when pressed, 220 Ω pull-down to GND.</text>
+    <text x="600" y="680">• IR shots: NEC protocol on a 38 kHz carrier (IRremote library).</text>
+  </g>
+</svg>

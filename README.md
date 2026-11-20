@@ -1,105 +1,148 @@
 # DIY Low-Budget Arduino Laser Tag System
-This project is an Arduino-based laser tag system designed for customizable, low-cost gameplay. It combines infrared (IR) communication, sensors, and visual feedback to simulate a real laser tag experience.  The system includes an IR transmitter and an IR receiver. The design supports multiple players and team configurations.
 
-____________________________________________________________________
+This project is an Arduino-based laser tag system designed for customizable, low-cost gameplay. It combines infrared (IR) communication, sensors and visual feedback to simulate a real laser tag experience.
 
- COMPONENTS (for 1 rifle + helmet set)
--Arduino Uno R3 / R4 or compatible clone with solderable headers (it's mandatory to have solderable headers if you don't want to use breadboards or solderable pcbs)
--KY-005 IR emitter LED (5 mm)
--KY-022 IR receiver module
--Collimating lens (Ø 30 mm, focal length 50 mm)
--LCD 1602 display
--Battery pack (4x AA batteries)
--On/off switch
--Potentiometer
--5.5 mm barrel jack adapter (to power the Arduino from the battery pack)
--One or more standard LEDs (can be placed in parallel)
--3 push buttons
--Resistors (various values, ~220Ω to 10kΩ)
--Jumper wires (a Dupont crimping kit is highly recommended)
--Soldering equipment (tin, iron, etc.)
--3D Printed Parts
--Any kind of glue
--You can get the helmet printing anyone and installing IR receiver and LED
+Each player uses a **rifle** (IR transmitter, LCD, buttons) and a **helmet** (IR receiver). The system supports multiple players split into two teams.
 
-Soon in my makerworld page STL files will be available:
-Rifle body
-Trigger mechanism
-Battery pack housing (you can easily purchase it on aliexpress if you prefer)
+---
 
-<img width="820" height="657" alt="image" src="https://github.com/user-attachments/assets/fdf21a03-ced0-430c-8ac0-c158e6361779" />
-<img width="470" height="409" alt="image" src="https://github.com/user-attachments/assets/5b6a1baa-c219-4b4d-8ec8-ef8b8a82e3da" />
-<img width="321" height="324" alt="image" src="https://github.com/user-attachments/assets/b456e1b2-4560-4e1e-8402-ac6949dd23b7" />
-<img width="231" height="295" alt="image" src="https://github.com/user-attachments/assets/711d88a5-ad41-4feb-8cdf-c4013748060c" />
+## Features
 
+- **Two teams**: Red and Blue, selected from the on-screen menu.
+- **Three classes** with different HP, damage, magazine size, fire rate and reload time (see [Classes](#classes)).
+- **Encoded IR shots**: every shot carries the shooter's team and class (NEC protocol), so the helmet knows who hit you and how much damage to apply.
+- **Full-auto fire** while the trigger is held, limited by the fire rate of the class.
+- **Reload**: when the magazine is empty, pull the trigger to reload. The status LED blinks while reloading.
+- **Hit feedback**: the status LED flashes when you get hit.
+- **Respawn**: when your HP reaches zero, a 30-second countdown starts. Then you respawn with full HP and ammo.
+- **LCD HUD** (16×2) showing HP and ammo.
 
+## Classes
 
+| Class | HP | Damage per hit | Magazine | Fire rate | Reload time |
+|---|---:|---:|---:|---:|---:|
+| ASSALTO (Assault) | 100 | 20 | 30 | 4 shots/s | 4 s |
+| TANK | 300 | 12 | 15 | 5 shots/s | 2.5 s |
+| ASSASSINO (Assassin) | 60 | 240 | 1 | 1 shot/s | 10 s |
+
+Hits needed to eliminate a player:
+
+| Shooter ↓ / Target → | Assault | Tank | Assassin |
+|---|:---:|:---:|:---:|
+| **Assault** | 5 | 15 | 3 |
+| **Tank** | 9 | 25 | 5 |
+| **Assassin** | 1 | 2 | 1 |
+
+All values can be changed in the `classData` array in [`laserGameV2.ino`](laserGameV2/laserGameV2.ino).
+
+## How to play
+
+1. Switch on the rifle. The LCD shows **"Scegli squadra"** (choose team): press **Next** to switch between *Rossa* (Red) and *Blu* (Blue), then **Select** to confirm.
+2. The LCD shows **"Scegli classe"** (choose class): press **Next** to cycle through the classes, then **Select** to confirm.
+3. The game starts and the LCD shows **Vita** (HP) and **Ammo**. Hold the trigger to shoot.
+4. When the magazine is empty, pull the trigger again to reload (**RELD** on the display).
+5. When your HP reaches zero, the LCD shows **"SEI MORTO!"** (you are dead) and a 30-second countdown. Then you respawn with the same team and class.
+
+> The on-screen texts are in Italian.
+
+---
+
+## Components (for 1 rifle + helmet set)
+
+- Arduino Uno R3 / R4 or compatible clone with solderable headers (mandatory if you don't want to use breadboards or solderable PCBs)
+- KY-005 IR emitter LED (5 mm)
+- KY-022 IR receiver module
+- Collimating lens (Ø 30 mm, focal length 50 mm)
+- LCD 1602 display
+- Battery pack (4× AA batteries)
+- On/off switch
+- Potentiometer (LCD contrast)
+- 5.5 mm barrel jack adapter (to power the Arduino from the battery pack)
+- One or more standard LEDs (can be placed in parallel)
+- 3 push buttons
+- Resistors (various values, ~220 Ω to 10 kΩ)
+- Jumper wires (a Dupont crimping kit is highly recommended)
+- Soldering equipment (tin, iron, etc.)
+- 3D printed parts
+- Any kind of glue
+- Helmet: any 3D printed or recycled helmet with the IR receiver and the LED installed
+
+## Software
+
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [IRremote](https://github.com/Arduino-IRremote/Arduino-IRremote) by Armin Joachimsmeyer, version 4.x (install it from the Library Manager)
+- LiquidCrystal (included with the Arduino IDE)
+
+Open [`laserGameV2/laserGameV2.ino`](laserGameV2/laserGameV2.ino), select your board and upload.
+
+## 3D printed parts
+
+The STL files will soon be available on my MakerWorld page:
+
+- Rifle body
+- Trigger mechanism
+- Battery pack housing (you can also buy one on AliExpress)
+
+<p>
+  <img width="567" alt="Rifle parts in the slicer" src="https://github.com/user-attachments/assets/fdf21a03-ced0-430c-8ac0-c158e6361779" />
+</p>
+<p>
+  <img width="300" alt="Printed part in the slicer" src="https://github.com/user-attachments/assets/5b6a1baa-c219-4b4d-8ec8-ef8b8a82e3da" />
+  <img width="230" alt="Printed part in the slicer" src="https://github.com/user-attachments/assets/b456e1b2-4560-4e1e-8402-ac6949dd23b7" />
+  <img width="180" alt="Printed part in the slicer" src="https://github.com/user-attachments/assets/711d88a5-ad41-4feb-8cdf-c4013748060c" />
+</p>
 
 Print everything and prepare the parts before assembly.
 
-____________________________________________________________________
+---
 
-GAMEPLAY FEATURES
-The system includes basic but customizable gameplay mechanics:
-Multiple selectable classes
-Each class has different:
-Damage
-HP (health points)
-Fire rate
-Damage
-You can select the class through buttons.
-Respawn system
-When HP reaches zero, a countdown starts before the player respawns.
- Notes & Tips
-Proper alignment of the IR emitter and collimating lens is important for range and accuracy.
-The potentiometer can be used for display contrast or tuning (depending on implementation).
-Using crimped connectors (dupont terminals) instead of loose jumper wires will make everything much more reliable.
-You can expand the system easily (sound effects, score tracking, team modes, etc.).
+## Wiring
 
-____________________________________________________________________
+![Wiring diagram](docs/wiring.svg)
 
-WIRING 
+| Arduino pin | Connected to | Notes |
+|---|---|---|
+| D3 | KY-005 IR LED, signal (S) | IR shots. Module GND → GND |
+| D11 | KY-022 IR receiver, signal (S) | On the helmet. VCC → 5V, GND → GND |
+| D6 | Fire button (trigger) | Other side of the button → 3.3V, 220 Ω pull-down → GND |
+| D8 | Next button | Same wiring as the fire button |
+| D9 | Select button | Same wiring as the fire button |
+| D10 | Status LED(s) | Through a series resistor, LED cathode → GND |
+| D12, D2, D5, D4, D13, D7 | LCD RS, E, D4, D5, D6, D7 | 4-bit mode |
+| DC jack | 4× AA battery pack | Through the on/off switch and the 5.5 mm barrel jack |
 
--IR transmitter
-DAT = Pin_3 
-GND = GND
+**LCD:** power, contrast (potentiometer) and backlight wiring coming soon.
 
--IR receiver
-OUT = Pin_11
-GND = GND
-VCC = 5v
+### Buttons
 
--Buttons 
-Below you can see the "Fire" button Wiring. You have other two buttons with the same wiring but different pinout:
-"Next" button at pin_8
-"Select" button at pin_9
-<img width="1204" height="1600" alt="buttonsWiring" src="https://github.com/user-attachments/assets/58c7b64a-f5d4-4668-96fd-a899b8fbe531" />
-<img width="1536" height="2040" alt="FireButtonPosition" src="https://github.com/user-attachments/assets/455daa69-cc3e-48ad-9d4f-6644197a7199" />
+The three buttons share the same wiring, shown here for the fire button:
 
+<p>
+  <img width="400" alt="Button wiring" src="Process_Images/buttonsWiring.jpeg" />
+  <img width="400" alt="Fire button position" src="Process_Images/FireButtonPosition.jpeg" />
+</p>
 
-____________________________________________________________________
+---
 
-ASSEMBLY
+## Assembly
 
-Once all parts are printed:
+1. Mount all electronic components inside the printed parts.
+2. Wire everything according to the [wiring diagram](#wiring).
+3. Solder the connections where needed for stability.
 
-Assemble the rifle and helmet wiring (and soldering) as shown
-<img width="1204" height="1600" alt="assembly2" src="https://github.com/user-attachments/assets/5732682b-21c3-44c0-893c-928f7e189814" />
-<img width="1204" height="1600" alt="assembly2" src="https://github.com/user-attachments/assets/8a3bd42b-6f74-4d6f-b285-b53699f6bb59" />
-<img width="1204" height="1600" alt="assembly1" src="https://github.com/user-attachments/assets/0fd5dd1e-7248-452d-921a-0476c5874516" />
+<p>
+  <img width="400" alt="IR LED and collimating lens in the rifle body" src="Process_Images/assembly1.jpeg" />
+  <img width="400" alt="Rifle wiring" src="Process_Images/assembly2.jpeg" />
+</p>
 
-Mount all electronic components inside the printed structures.
-Wire everything according to the circuit design.
-Solder connections where needed for stability.
+### Trigger mechanism
 
-____________________________________________________________________
+<img width="400" alt="Trigger mechanism" src="Process_Images/triggerMechanism.jpeg" />
 
-TRIGGER MECHANISM ASSEMBLY
+---
 
-<img width="1536" height="2040" alt="triggerMechanism" src="https://github.com/user-attachments/assets/509867ee-269d-4d4b-8309-a6e14f789e6a" />
+## Notes & tips
 
-
-
-
-
-
+- Proper alignment of the IR emitter and the collimating lens is important for range and accuracy.
+- Crimped connectors (Dupont terminals) instead of loose jumper wires make everything much more reliable.
+- The system is easy to expand: sound effects, score tracking, new classes or game modes.
