@@ -4,6 +4,14 @@ This project is an Arduino-based laser tag system designed for customizable, low
 
 Each player uses a **rifle** (IR transmitter, LCD, buttons) and a **helmet** (IR receiver). The system supports multiple players split into two teams.
 
+## Demo
+
+Breadboard prototype: team and class selection, game screen, shooting and reload.
+
+![Menu walkthrough](Process_Images/menuWalkthrough.jpg)
+
+▶ [Full video (37 s, no audio)](Process_Images/menuDemo.mp4)
+
 ---
 
 ## Features
@@ -112,6 +120,17 @@ Print everything and prepare the parts before assembly.
 | DC jack | 4× AA battery pack | Through the on/off switch and the 5.5 mm barrel jack |
 
 **LCD:** power, contrast (potentiometer) and backlight wiring coming soon.
+
+### Power
+
+The 3D printed battery holder takes 4 AA cells in series. The green marks in the photo show the connections between the contacts:
+
+- top side: between the 2nd and the 3rd cell;
+- bottom side: between the 1st and the 2nd cell, and between the 3rd and the 4th cell.
+
+The two output wires (1st and 4th cell) go, through the on/off switch, to a 5.5 mm barrel jack that plugs into the Arduino power socket.
+
+<img width="300" alt="Battery pack wiring" src="Process_Images/batteryPack.jpeg" />
 
 ### Buttons
 
